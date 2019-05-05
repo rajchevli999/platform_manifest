@@ -1,4 +1,4 @@
-AOSiP
+DerpFest
 ===========
 
 Getting Started
@@ -10,11 +10,11 @@ familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
 To initialize your local repository using the AOSiP trees, use a command like this:
 
 ```bash
-repo init -u git://github.com/AOSiP/platform_manifest.git -b pie
+repo init -u git://github.com/DerpFest-OP5T/platform_manifest.git -b pie
 ```
 Then to sync up:
 ```bash
-repo sync -f --force-sync --no-tags --no-clone-bundle
+repo sync -c -f -j$( nproc --all ) --force-sync --no-clone-bundle --no-tags
 ```
 
 Building the source
@@ -23,9 +23,9 @@ Building the source
 The source at AOSiP is well configured for building.
 
 ```bash
-source build/envsetup.sh
-lunch aosip_device-userdebug
-time mka kronic
+. build/envsetup.sh
+lunch aosip_dumpling-userdebug
+mka kronic -j$(nproc --all)
 ```
 
 ## Submitting Patches ##

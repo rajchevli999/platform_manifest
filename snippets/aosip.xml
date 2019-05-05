@@ -15,15 +15,19 @@
            fetch="https://github.com/AOSiP-Devices"
            revision="refs/heads/pie" />
 
+  <remote  name="derp"
+           fetch="https://github.com/DerpFest-OP5T"
+           revision="refs/heads/pie" />
+
   <!-- AOSiP -->
   <!-- General -->
   <project path="art" name="platform_art" remote="aosip" />
-  <project path="bionic" name="platform_bionic" remote="aosip" />
+  <project path="bionic" name="platform_bionic" remote="derp" />
   <project path="bootable/recovery" name="platform_bootable_recovery" remote="aosip" />
-  <project path="manifest" name="platform_manifest" remote="aosip" />
+  <project path="manifest" name="DerpFest-OP5T/platform_manifest" remote="github" revision="pie" />
 
   <!-- Build -->
-  <project path="build/make" name="platform_build" remote="aosip" >
+  <project path="build/make" name="platform_build" remote="derp" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -71,17 +75,17 @@
   <project path="external/zlib" name="platform_external_zlib" remote="aosip" />
 
   <!-- Frameworks -->
-  <project path="frameworks/av" name="platform_frameworks_av" remote="aosip" />
-  <project path="frameworks/base" name="platform_frameworks_base" remote="aosip" />
+  <project path="frameworks/av" name="platform_frameworks_av" remote="derp" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="derp" />
   <project path="frameworks/compile/mclinker" name="platform_frameworks_compile_mclinker" remote="aosip" />
-  <project path="frameworks/native" name="platform_frameworks_native" remote="aosip" />
+  <project path="frameworks/native" name="platform_frameworks_native" remote="derp" />
   <project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" remote="aosip" />
   <project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" remote="aosip" />
   <project path="frameworks/support" name="platform_frameworks_support" remote="aosip" />
 
   <!-- Hardware -->
   <project path="hardware/aosip/interfaces" name="platform_hardware_aosip_interfaces" remote="aosip" />
-  <project path="hardware/interfaces" name="platform_hardware_interfaces" remote="aosip" />
+  <project path="hardware/interfaces" name="platform_hardware_interfaces" remote="derp" />
   <project path="hardware/libhardware" name="platform_hardware_libhardware" remote="aosip" />
   <project path="hardware/libhardware_legacy" name="platform_hardware_libhardware_legacy" remote="aosip" />
   <project path="hardware/nxp/nfc" name="platform_hardware_nxp_nfc" remote="aosip" />
@@ -93,7 +97,7 @@
   <project path="packages/apps/CellBroadcastReceiver" name="platform_packages_apps_CellBroadcastReceiver" remote="aosip" />
   <project path="packages/apps/Changelog" name="platform_packages_apps_Changelog" remote="aosip" />
   <project path="packages/apps/Contacts" name="platform_packages_apps_Contacts" remote="aosip" />
-  <project path="packages/apps/CustomDoze" name="platform_packages_apps_CustomDoze" remote="aosip" />
+  <project path="packages/apps/CustomDoze" name="platform_packages_apps_CustomDoze" remote="derp" />
   <project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" remote="aosip" />
   <project path="packages/apps/Dialer" name="platform_packages_apps_Dialer" remote="aosip" />
   <project path="packages/apps/DocumentsUI" name="platform_packages_apps_DocumentsUI" remote="aosip" />
@@ -101,12 +105,12 @@
   <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" remote="aosip" />
   <project path="packages/apps/Messaging" name="platform_packages_apps_Messaging" remote="aosip" />
   <project path="packages/apps/Nfc" name="platform_packages_apps_Nfc" remote="aosip" />
-  <project path="packages/apps/OwlsNest" name="platform_packages_apps_OwlsNest" remote="aosip" />
+  <project path="packages/apps/OwlsNest" name="platform_packages_apps_OwlsNest" remote="derp" />
   <project path="packages/apps/PackageInstaller" name="platform_packages_apps_PackageInstaller" remote="aosip" />
-  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="aosip" />
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="derp" />
   <project path="packages/apps/SettingsIntelligence" name="platform_packages_apps_SettingsIntelligence" remote="aosip" />
-  <project path="packages/apps/SmartNav" name="platform_packages_apps_SmartNav" remote="aosip" />
-  <project path="packages/apps/SmartNavSettings" name="platform_packages_apps_SmartNavSettings" remote="aosip" />
+  <project path="packages/apps/SmartNav" name="platform_packages_apps_SmartNav" remote="derp" />
+  <project path="packages/apps/SmartNavSettings" name="platform_packages_apps_SmartNavSettings" remote="derp" />
   <project path="packages/apps/Snap" name="platform_packages_apps_Snap" remote="aosip" />
   <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="aosip" />
   <project path="packages/apps/WeatherClient" name="platform_packages_apps_WeatherClient" remote="aosip" />
@@ -114,7 +118,7 @@
   <project path="packages/providers/DownloadProvider" name="platform_packages_providers_DownloadProvider" remote="aosip" />
   <project path="packages/providers/MediaProvider" name="platform_packages_providers_MediaProvider" remote="aosip" />
   <project path="packages/services/Telecomm" name="platform_packages_services_Telecomm" remote="aosip" />
-  <project path="packages/services/Telephony" name="platform_packages_services_Telephony" remote="aosip" />
+  <project path="packages/services/Telephony" name="platform_packages_services_Telephony" remote="derp" />
 
   <!-- Prebuilts -->
   <project path="prebuilts/build-tools" name="platform_prebuilts_build-tools" clone-depth="1" remote="aosip" />
@@ -122,19 +126,32 @@
 
   <!-- System -->
   <project path="system/bt" name="platform_system_bt" remote="aosip" />
-  <project path="system/core" name="platform_system_core" remote="aosip" />
+  <project path="system/core" name="platform_system_core" remote="derp" />
   <project path="system/extras" name="platform_system_extras" remote="aosip" />
   <project path="system/libhidl" name="platform_system_libhidl" remote="aosip" />
   <project path="system/netd" name="platform_system_netd" remote="aosip" />
   <project path="system/nfc" name="platform_system_nfc" remote="aosip" />
-  <project path="system/sepolicy" name="platform_system_sepolicy" remote="aosip" />
+  <project path="system/sepolicy" name="platform_system_sepolicy" remote="derp" />
   <project path="system/tools/hidl" name="platform_system_tools_hidl" remote="aosip" />
   <project path="system/update_engine" name="platform_system_update_engine" remote="aosip" />
   <project path="system/vold" name="platform_system_vold" remote="aosip" />
 
   <!-- Vendor -->
-  <project path="vendor/aosip" name="platform_vendor_aosip" remote="aosip" />
+  <project path="vendor/aosip" name="platform_vendor_aosip" remote="derp" />
   <project path="vendor/codeaurora/telephony" name="platform_vendor_codeaurora_telephony" remote="aosip" />
   <project path="vendor/qcom/opensource/cryptfs_hw" name="platform_vendor_qcom_opensource_cryptfs_hw" remote="aosip" />
+
+  <!-- DerpFest specific stuff -->
+  <project path="frameworks/bootleggers" name="BootleggersROM/frameworks_bootleggers" remote="github" revision="pasta" />
+  <project path="packages/fonts/aosip" name="platform_packages_fonts_aosip" remote="derp" />
+  <project path="packages/apps/OmniStyle" name="platform_packages_apps_OmniStyle" remote="derp" />
+  <project path="packages/apps/Dirac" name="platform_packages_apps_Dirac" remote="derp" />
+  <project path="packages/apps/Eleven" name="LineageOS/android_packages_apps_Eleven" remote="github" revision="lineage-16.0" />
+
+  <!-- PixelExperience GApps and Mods -->
+  <project path="vendor/gapps" name="PixelExperience/vendor_gapps" remote="gitlab" revision="pie" />
+  <project path="vendor/pixelstyle" name="platform_vendor_pixelstyle" remote="derp" />
+  <project path="packages/apps/Playground" name="PixelExperience/packages_apps_Playground" remote="gitlab" revision="pie" />
+  <project path="packages/apps/WallpapersBReel2018" name="PixelExperience/packages_apps_WallpapersBReel2018" remote="gitlab" revision="pie" />
 </manifest>
 
